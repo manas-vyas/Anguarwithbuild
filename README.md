@@ -52,7 +52,9 @@ After that, run this command to install Node 11 using NVM
 
 nvm install 11
 
+node -v
 
+npm -v
 
 Now you have activated Node 12 on your instance. To make Node 12 the default version please run the following command
 
