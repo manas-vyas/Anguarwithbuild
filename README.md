@@ -54,4 +54,15 @@ After that, run this command to install Node 11 using NVM
 nvm install 11
 
 
+
+Now you have activated Node 12 on your instance. To make Node 12 the default version please run the following command
+
+nvm alias default 12
+
+
+Now create a symbolic link so that other users can use the “node” and “npm” command.
+
+
+sudo ln -s $(which node) /usr/bin/
+sudo ln -s $(which npm) /usr/bin/
 ==============================================================================================================================
