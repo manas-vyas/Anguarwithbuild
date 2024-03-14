@@ -1,8 +1,8 @@
 version: "3"
 services:
   AngularApp:
-    image: angularapp
+    image: Sangularappreplace
     ports:
        - "80:80"
-    container_name: AngularApp
+    container_name: AngularAppcontainer
 
