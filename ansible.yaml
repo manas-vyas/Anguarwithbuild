@@ -1,0 +1,20 @@
+---
+- name: Deploy artifact and restart nginx
+  hosts: all
+  become: true
+  vars:
+    artifact_path: "/var/lib/jenkins/workspace/test/build/"
+    nginx_service_name: "nginx"
+  tasks:
+    - name: Copy artifact to server
+      copy:
+        src: "{{ artifact_path }}"
+        dest: "/usr/share/nginx/html/"
+        remote_src: yes
+
+    - name: Restart nginx
+      service:
+        name: "{{ nginx_service_name }}"
+        state: restarted
+
+#remote_src set to yes ensures that Ansible copies the file from the control machine to the destination machine, rather than trying to find it on the destination #machine.
